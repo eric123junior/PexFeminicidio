@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ajuda Urgente — Voz & Vida</title>
+  <link rel="stylesheet" href="../css/style.css"/>
+  <link rel="stylesheet" href="../css/pages.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    .socorro-hero {
+      background: linear-gradient(160deg, #1a0008, #2d0010);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 100px 24px 60px;
+      position: relative;
+      overflow: hidden;
+    }
+    .socorro-hero::before {
+      content:'';
+      position:absolute;
+      inset:0;
+      background: radial-gradient(ellipse at 50% 40%, rgba(232,84,122,0.3), transparent 65%);
+    }
+    .socorro-content { position:relative; z-index:2; max-width:700px; margin:0 auto; }
+    .socorro-emoji { font-size:80px; display:block; margin-bottom:24px; animation: pulse-big 1.5s ease-in-out infinite; }
+    @keyframes pulse-big { 0%,100%{transform:scale(1)} 50%{transform:scale(1.15)} }
+    .socorro-title { font-family: var(--font-display); font-size: clamp(42px,8vw,80px); color:white; line-height:1.1; margin-bottom:20px; }
+    .socorro-title em { color: var(--rose-light); }
+    .socorro-desc { font-size:18px; color:rgba(255,255,255,0.75); margin-bottom:48px; line-height:1.7; }
+    .big-numbers { display:flex; gap:20px; justify-content:center; flex-wrap:wrap; margin-bottom:40px; }
+    .big-num-btn {
+      display:flex; flex-direction:column; align-items:center;
+      background: rgba(255,255,255,0.08);
+      border: 2px solid rgba(232,84,122,0.5);
+      border-radius:20px;
+      padding: 28px 40px;
+      color: white;
+      transition: var(--transition);
+      min-width: 160px;
+      text-decoration:none;
+    }
+    .big-num-btn:hover { background: rgba(232,84,122,0.2); border-color:var(--rose); transform:translateY(-4px) scale(1.03); }
+    .big-num-btn.police { border-color:rgba(100,150,255,0.6); }
+    .big-num-btn.police:hover { background:rgba(100,150,255,0.15); border-color:rgba(100,150,255,1); }
+    .num-digit { font-family: var(--font-display); font-size:52px; font-weight:700; color:var(--rose-light); line-height:1; }
+    .big-num-btn.police .num-digit { color:#8ab4ff; }
+    .num-name { font-size:14px; color:rgba(255,255,255,0.7); margin-top:8px; font-weight:500; }
+    .socorro-reassure {
+      background: rgba(255,255,255,0.05);
+      border-radius:16px;
+      padding:24px 32px;
+      margin-bottom:32px;
+    }
+    .socorro-reassure p { color:rgba(255,255,255,0.8); font-size:16px; line-height:1.8; }
+    .socorro-reassure strong { color:white; }
+    .exit-btn {
+      display:inline-block;
+      background: rgba(255,255,255,0.1);
+      border:1px solid rgba(255,255,255,0.2);
+      color:rgba(255,255,255,0.5);
+      padding:10px 24px;
+      border-radius:30px;
+      font-size:13px;
+      transition:var(--transition);
+      margin-top:24px;
+    }
+    .exit-btn:hover { background:rgba(255,255,255,0.15); color:white; }
+    .below-fold { padding:80px 0; background:var(--dark); }
+    .safety-tips { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:20px; margin-top:40px; }
+    .safety-tip { background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); border-radius:16px; padding:24px; }
+    .safety-tip h4 { color:var(--rose-light); font-size:16px; margin-bottom:10px; }
+    .safety-tip p { color:rgba(255,255,255,0.7); font-size:14px; line-height:1.7; }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar scrolled" id="navbar">
+    <div class="nav-container">
+      <a href="../index.html" class="nav-logo"><span class="logo-icon">🌸</span><span>Voz <em>&</em> Vida</span></a>
+      <button class="nav-toggle" id="navToggle"><span></span><span></span><span></span></button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="../index.html">Início</a></li>
+        <li><a href="direitos.html">Direitos da Mulher</a></li>
+        <li><a href="tecnologia.html">Tecnologia</a></li>
+        <li><a href="casos.html">Casos</a></li>
+        <li><a href="passos.html">O Que Fazer</a></li>
+        <li><a href="sobre.html">Sobre</a></li>
+        <li><a href="socorro.html" class="nav-sos">Ajuda Urgente</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section class="socorro-hero">
+    <div class="socorro-content">
+      <span class="socorro-emoji">🆘</span>
+      <h1 class="socorro-title">Você não está<br><em>sozinha.</em></h1>
+      <p class="socorro-desc">Se você está em perigo ou sente que algo ruim pode acontecer, ligue agora. Não precisa ter certeza. Não precisa de provas. Só precisa ligar.</p>
+
+      <div class="big-numbers">
+        <a href="tel:190" class="big-num-btn police">
+          <div class="num-digit">190</div>
+          <div class="num-name">Polícia Militar<br><small>Emergência Imediata</small></div>
+        </a>
+        <a href="tel:180" class="big-num-btn">
+          <div class="num-digit">180</div>
+          <div class="num-name">Central da Mulher<br><small>24h — Gratuito</small></div>
+        </a>
+        <a href="tel:188" class="big-num-btn">
+          <div class="num-digit">188</div>
+          <div class="num-name">CVV<br><small>Apoio Emocional 24h</small></div>
+        </a>
+      </div>
+
+      <div class="socorro-reassure">
+        <p>
+          Você pode ligar <strong>mesmo sem ter certeza</strong> se é perigoso. 
+          Pode ligar <strong>em silêncio</strong> — deixe o telefone aberto, eles entendem.
+          O atendimento é <strong>gratuito e sigiloso</strong>.
+          Você <strong>não precisa dar seu nome</strong> para o 180.
+        </p>
+      </div>
+
+      <a href="passos.html" class="btn-primary" style="display:inline-block; margin-bottom:16px;">Ver passo a passo completo</a>
+      <br>
+      <a href="javascript:history.back()" class="exit-btn">← Voltar (saída rápida)</a>
+    </div>
+  </section>
+
+  <section class="below-fold">
+    <div class="container">
+      <div class="section-header centered">
+        <span class="section-tag" style="color:var(--rose-light)">Dicas de Segurança</span>
+        <h2 class="section-title" style="color:white">Proteja-se <em>agora</em></h2>
+      </div>
+      <div class="safety-tips">
+        <div class="safety-tip">
+          <h4>🔇 Se não puder falar</h4>
+          <p>Ligue para o 190 e deixe o telefone aberto. Eles estão treinados para situações em que a vítima não pode falar. Responda às perguntas com sons ou silêncio — eles entenderão.</p>
+        </div>
+        <div class="safety-tip">
+          <h4>📱 Apague o histórico</h4>
+          <p>Se você está pesquisando ajuda e o agressor tem acesso ao seu celular, apague o histórico de navegação depois. Use modo privado/anônimo. Ou acesse de outro dispositivo, como o de uma amiga.</p>
+        </div>
+        <div class="safety-tip">
+          <h4>🚪 Plano de saída</h4>
+          <p>Identifique as saídas do local onde você está. Se precisar sair correndo, saiba para onde vai. Uma casa de vizinho, familiar, mercado, delegacia — qualquer lugar com outras pessoas.</p>
+        </div>
+        <div class="safety-tip">
+          <h4>👩‍👩‍👧 Fale com alguém</h4>
+          <p>Confie em pelo menos uma pessoa — amiga, familiar, vizinha. Avise sobre sua situação. Combine uma palavra-código: se você mandar aquela palavra, ela sabe que precisa chamar ajuda.</p>
+        </div>
+        <div class="safety-tip">
+          <h4>📄 Documentos importantes</h4>
+          <p>Se puder, guarde cópias dos seus documentos (RG, CPF) na casa de alguém de confiança ou no e-mail. Ter documentos facilita buscar ajuda e acessar serviços de proteção.</p>
+        </div>
+        <div class="safety-tip">
+          <h4>💜 Você merece segurança</h4>
+          <p>Violência não é normal. Ciúme não é amor. Controle não é proteção. Você não precisa merecer para ser respeitada — respeito é um direito fundamental de toda mulher.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom" style="border-top:1px solid rgba(255,255,255,0.1); padding-top:24px; text-align:center;">
+        <p style="color:rgba(255,255,255,0.6);">🌸 Voz & Vida — Em caso de perigo, ligue <strong style="color:white">190</strong> ou <strong style="color:white">180</strong></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>
